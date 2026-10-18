@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101A35">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="شعر و تال غفور">
+<link rel="apple-touch-icon" href="app-icon.png">
+<title>شعر و تال غفور</title>
+<style>
+:root{--navy:#101A35;--card:#fff;--gold:#D4AF37;--ink:#17213b;--muted:#73809a;--line:#e4e8f0;--soft:#f4f6fb;--glow:rgba(212,175,55,.22);--font:16px}
+*{box-sizing:border-box}html{background:var(--navy)}body{margin:0;background:var(--navy);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;font-size:var(--font);padding:env(safe-area-inset-top) 0 calc(90px + env(safe-area-inset-bottom));}
+button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.app{max-width:680px;margin:auto;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,rgba(212,175,55,.12),transparent 38%),var(--navy);padding:12px 13px 28px}
+header{display:flex;align-items:center;gap:12px;padding:12px 4px 18px}.avatar{width:58px;height:58px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);box-shadow:0 0 0 4px rgba(212,175,55,.12),0 0 20px var(--glow)}h1{font-size:1.22em;margin:0 0 4px;letter-spacing:.1px}.sub{color:#c5ccda;font-size:.78em}.header-actions{margin-right:auto;display:flex;gap:7px}.iconbtn{border:1px solid rgba(212,175,55,.45);background:rgba(255,255,255,.07);color:var(--gold);border-radius:13px;padding:9px}
+.searchbar{display:flex;gap:8px;margin-bottom:14px}.searchbar input{min-width:0;flex:1}.field,.searchbar input,.searchbar select,input,textarea,select{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:11px 12px;width:100%}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:18px 2px 10px}.section-head h2{font-size:1.02em;margin:0}.section-head small{color:#c6ccda}.btn{border:0;border-radius:12px;padding:10px 13px;font-weight:700;background:var(--gold);color:#201a08;box-shadow:0 5px 14px var(--glow)}.btn.secondary{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.17);box-shadow:none}.btn.danger{background:#9d3342;color:#fff;box-shadow:none}.btn.small{padding:7px 10px;font-size:.82em}.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tile{background:linear-gradient(145deg,#fff,#f3f5fa);color:var(--ink);border:1px solid rgba(212,175,55,.45);border-radius:17px;padding:13px;text-align:right;min-height:86px;box-shadow:0 7px 20px rgba(0,0,0,.13);position:relative;overflow:hidden}.tile:after{content:"";position:absolute;width:90px;height:90px;left:-40px;top:-42px;border-radius:50%;background:var(--glow)}.tile strong{display:block;font-size:1em;margin-bottom:7px;position:relative;z-index:1}.tile span{font-size:.76em;color:#64718b;position:relative;z-index:1}.tile .count{float:left;background:#f7edc9;color:#735b13;border-radius:8px;padding:3px 7px;font-size:.76em}
+.panel{background:var(--card);color:var(--ink);border-radius:18px;padding:14px;margin-top:12px;box-shadow:0 8px 25px rgba(0,0,0,.12);border:1px solid rgba(212,175,55,.22)}.hidden{display:none!important}.tabs{display:flex;gap:7px;overflow:auto;padding:3px 1px 8px}.pill{white-space:nowrap;border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:999px;padding:8px 12px;font-size:.82em}.pill.active{background:var(--navy);color:var(--gold);border-color:var(--gold)}.notegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.notebtn{border:1px solid #e6d69b;background:linear-gradient(145deg,#fff,#fffaf0);color:var(--ink);border-radius:14px;text-align:right;padding:12px;min-height:80px;box-shadow:0 4px 12px rgba(16,26,53,.06)}.notebtn b{display:block;font-size:1em;margin-bottom:6px}.notebtn small{color:#73809a;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.notebtn .tag{font-size:.72em;color:#866c1d;margin-top:7px}.empty{color:#7b8496;text-align:center;padding:20px 8px;font-size:.9em}.linebox{border:1px solid var(--line);border-radius:14px;padding:11px;margin:9px 0}.linebox h3{font-size:.92em;margin:0 0 8px;color:#8b6d13}.linebox textarea{min-height:82px;resize:vertical;line-height:1.7}.row{display:flex;gap:8px;align-items:center}.row>*{min-width:0}.row .grow{flex:1}.muted{color:#758099;font-size:.8em}.filecard{border:1px solid var(--line);border-radius:13px;padding:10px;margin-top:9px}.filecard strong{display:block;overflow-wrap:anywhere}.filecard audio,.filecard video{width:100%;margin-top:8px;border-radius:10px}.file-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}.bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:10;background:rgba(13,22,46,.96);backdrop-filter:blur(18px);border-top:1px solid rgba(212,175,55,.28);padding:8px 10px calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:center}.navinner{width:100%;max-width:650px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.navbtn{border:0;background:transparent;color:#c4cada;border-radius:12px;padding:7px 3px;font-size:.72em}.navbtn span{display:block;font-size:1.45em;margin-bottom:3px}.navbtn.active{color:var(--gold);background:rgba(212,175,55,.12)}.modalback{position:fixed;inset:0;background:rgba(4,9,23,.72);z-index:30;display:flex;align-items:flex-end;justify-content:center;padding:12px}.modal{background:var(--card);color:var(--ink);width:100%;max-width:600px;max-height:88vh;overflow:auto;border-radius:22px;padding:18px;box-shadow:0 15px 50px #0007}.modal h2{margin:0 0 14px;font-size:1.1em}.modal label{display:block;font-size:.82em;margin:11px 0 6px;color:#64718b}.modal textarea{min-height:110px;line-height:1.7}.modalfoot{display:flex;gap:8px;margin-top:14px}.modalfoot>*{flex:1}.settinggrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.settinggrid label{margin:0}.settinggrid input[type=color]{height:42px;padding:3px}.trashitem{padding:10px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:8px}.dark{--card:#1a2542;--ink:#edf1fb;--line:#35415d;--soft:#222f4e;--muted:#aab5ca}.dark .tile{background:linear-gradient(145deg,#1d2a49,#17213b);color:#f1f4fb}.dark .tile span,.dark .notebtn small{color:#b6c0d3}.dark .notebtn{background:#202c49;color:#f1f4fb;border-color:#75652e}.dark .panel{background:var(--card);color:var(--ink)}.dark input,.dark textarea,.dark select{background:#101a35;color:#f4f5fa;border-color:#35415d}.dark .pill{background:#202c49;color:#e8ecf5;border-color:#35415d}.dark .pill.active{background:var(--gold);color:#201a08}.dark .linebox h3{color:var(--gold)}.dark .empty,.dark .muted{color:#aab5ca}
+@media(min-width:520px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.notegrid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:360px){.app{padding-left:9px;padding-right:9px}.tile{padding:11px}.notegrid{grid-template-columns:1fr 1fr}.avatar{width:50px;height:50px}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+<header>
+<img class="avatar" src="profile.jpg" alt="عکس غفور">
+<div><h1>شعر و تال غفور</h1><div class="sub">کتاب شعر • راگ • تال • تبله</div></div>
+<div class="header-actions"><button class="iconbtn" onclick="showPage('settings')" aria-label="تنظیمات">⚙</button></div>
+</header>
+<div class="searchbar"><input id="globalSearch" placeholder="جستجو در تال‌ها، راگ‌ها و شعرها…" oninput="renderAll()"><button class="btn" onclick="openAddTaal()">＋ تال</button></div>
+<section id="page-home">
+<div class="section-head"><h2>تال‌های صوتی و تصویری</h2><small id="mediaCount">۰ تال</small></div>
+<div class="tiles" id="taalTiles"></div>
+<div class="panel hidden" id="taalDetail">
+<div class="row"><div class="grow"><h2 id="activeTaalTitle" style="margin:0 0 4px"></h2><div class="muted" id="activeTaalCount"></div></div><button class="btn small" onclick="addMediaToActive()">＋ فایل</button><button class="btn secondary small" onclick="closeTaal()">بستن</button></div>
+<div id="mediaList"></div>
+</div>
+<div class="section-head"><h2>کتاب شعر و راگ</h2><button class="btn small" onclick="openAddRaag()">＋ راگ</button></div>
+<div class="panel" style="margin-top:0">
+<div class="tabs" id="raagTabs"></div>
+<div class="row" style="margin:4px 0 12px"><div class="grow muted" id="raagHint">راگ را انتخاب کنید</div><button class="btn small" onclick="openAddNote()">＋ شعر</button></div>
+<div class="tabs" id="noteTaalTabs"></div>
+<div class="notegrid" id="noteGrid"></div>
+</div>
+</section>
+<section id="page-trash" class="hidden">
+<div class="section-head"><h2>سطل زباله</h2><button class="btn danger small" onclick="emptyTrash()">خالی کردن</button></div><div class="panel" id="trashList"></div>
+</section>
+<section id="page-settings" class="hidden">
+<div class="section-head"><h2>تنظیمات برنامه</h2></div>
+<div class="panel">
+<div class="settinggrid">
+<label>رنگ پس‌زمینه<input id="setNavy" type="color" value="#101A35" onchange="setColor('--navy',this.value)"></label>
+<label>رنگ دکمه‌ها<input id="setGold" type="color" value="#D4AF37" onchange="setColor('--gold',this.value)"></label>
+<label>رنگ کارت‌ها<input id="setCard" type="color" value="#FFFFFF" onchange="setColor('--card',this.value)"></label>
+<label>رنگ متن<input id="setInk" type="color" value="#17213b" onchange="setColor('--ink',this.value)"></label>
+</div>
+<hr style="border:0;border-top:1px solid var(--line);margin:17px 0">
+<div class="row"><label class="grow">اندازه نوشته <span id="fontLabel">۱۰۰٪</span><input id="fontSize" type="range" min="13" max="21" value="16" oninput="setFont(this.value)"></label><button class="btn secondary" onclick="toggleDark()" id="darkButton">دارک مود</button></div>
+<div class="row" style="margin-top:12px"><button class="btn secondary grow" onclick="exportData()">پشتیبان‌گیری از نوت‌ها</button><button class="btn secondary grow" onclick="document.getElementById('importJson').click()">بازیابی نوت‌ها</button><input id="importJson" type="file" accept=".json,application/json" class="hidden" onchange="importData(event)"></div>
+<p class="muted">فایل‌های صوتی و تصویری در حافظه همین مرورگر ذخیره می‌شوند. برای حفظ اطلاعات، هر از گاهی پشتیبان نوت‌ها را بگیرید. پاک‌کردن داده‌های مرورگر ممکن است فایل‌ها را حذف کند.</p>
+<div class="row"><button class="btn secondary grow" onclick="showPage('trash')">رفتن به سطل زباله</button><button class="btn danger grow" onclick="resetApp()">بازنشانی برنامه</button></div>
+</div>
+<div class="panel"><b>تاریخ امروز</b><p id="dates" class="muted"></p><p class="muted">برای صدای پیوسته، در آیفون برنامه را به صفحه اصلی اضافه کنید؛ با این حال iOS ممکن است هنگام قفل صفحه یا بستن مرورگر پخش را متوقف کند.</p></div>
+</section>
+</div>
+<nav class="bottomnav"><div class="navinner">
+<button class="navbtn active" data-page="home" onclick="showPage('home')"><span>♫</span>خانه</button>
+<button class="navbtn" data-page="trash" onclick="showPage('trash')"><span>♲</span>زباله</button>
+<button class="navbtn" data-page="settings" onclick="showPage('settings')"><span>⚙</span>تنظیمات</button>
+<button class="navbtn" onclick="showHelp()"><span>ⓘ</span>راهنما</button>
+</div></nav>
+<div id="modalRoot"></div>
+<input id="mediaInput" type="file" accept="audio/*,video/*,.mp3,.mp4,.m4a,.aac,.wav,.ogg,.flac,.mov,.m4v,.webm,.3gp" multiple class="hidden">
+<script>
+const DEFAULT_RAAGS=['راگ بهیروی','بهیرو','درباری','شیورنجنی','بلاول','دیگر راگ‌ها'];
+const DEFAULT_TAALS=['دادره','گده','کهروا','مغولی','قطغنی','روپک','دیگر تال‌ها'];
+const $=id=>document.getElementById(id);
+let state={taals:[],raags:[],notes:[],trash:[],activeTaal:null,activeRaag:null,activeNoteTaal:'همه تال‌ها',dark:false,font:16,colors:{},nextId:1};
+let db;
+function uid(){return String(Date.now())+'_'+(state.nextId++);}
+function loadState(){try{const s=JSON.parse(localStorage.getItem('sg_state')||'null');if(s)state={...state,...s,activeTaal:null}}catch(e){};if(!state.raags.length)state.raags=DEFAULT_RAAGS.map(name=>({id:uid(),name}));if(!state.taals.length)state.taals=DEFAULT_TAALS.map(name=>({id:uid(),name,mediaCount:0}));if(!state.activeRaag)state.activeRaag=state.raags[0]?.id;applyPrefs();}
+function save(){localStorage.setItem('sg_state',JSON.stringify({...state,activeTaal:null}));}
+function initDB(){return new Promise((resolve,reject)=>{const req=indexedDB.open('GhafoorTaalMedia',1);req.onupgradeneeded=()=>req.result.createObjectStore('media',{keyPath:'id'});req.onsuccess=()=>{db=req.result;resolve()};req.onerror=()=>reject(req.error)})}
+function dbAll(){return new Promise((res,rej)=>{const r=db.transaction('media').objectStore('media').getAll();r.onsuccess=()=>res(r.result||[]);r.onerror=()=>rej(r.error)})}
+function dbPut(x){return new Promise((res,rej)=>{const r=db.transaction('media','readwrite').objectStore('media').put(x);r.onsuccess=()=>res();r.onerror=()=>rej(r.error)})}
+function dbDelete(id){return new Promise((res,rej)=>{const r=db.transaction('media','readwrite').objectStore('media').delete(id);r.onsuccess=()=>res();r.onerror=()=>rej(r.error)})}
+function applyPrefs(){document.documentElement.style.setProperty('--font',(state.font||16)+'px');$('fontSize').value=state.font||16;$('fontLabel').textContent=Math.round((state.font||16)/16*100)+'٪';document.body.classList.toggle('dark',!!state.dark);for(const [k,v] of Object.entries(state.colors||{}))document.documentElement.style.setProperty(k,v);$('darkButton').textContent=state.dark?'خاموش کردن دارک مود':'دارک مود';}
+function setColor(k,v){state.colors[k]=v;document.documentElement.style.setProperty(k,v);save()}
+function setFont(v){state.font=+v;applyPrefs();save()}
+function toggleDark(){state.dark=!state.dark;applyPrefs();save()}
+function showPage(p){['home','trash','settings'].forEach(x=>$('page-'+x).classList.toggle('hidden',x!==p));document.querySelectorAll('.navbtn[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===p));if(p==='trash')renderTrash();if(p==='settings')renderDates();window.scrollTo({top:0,behavior:'smooth'})}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function matches(s){const q=$('globalSearch').value.trim().toLowerCase();return !q||String(s||'').toLowerCase().includes(q)}
+function renderAll(){renderTaals();renderRaags();if(state.activeTaal)renderTaalDetail();renderNotes()}
+function renderTaals(){const q=$('globalSearch').value.trim().toLowerCase();const filtered=state.taals.filter(t=>!q||t.name.toLowerCase().includes(q));$('mediaCount').textContent=state.taals.length+' تال';$('taalTiles').innerHTML=filtered.map(t=>`<button class="tile" onclick="openTaal('${t.id}')"><strong>${esc(t.name)} <span class="count" id="cnt-${t.id}">…</span></strong><span>باز کردن فایل‌های صوتی و تصویری</span></button>`).join('')||'<div class="empty">تال پیدا نشد.</div>';dbAll().then(items=>{state.taals.forEach(t=>{const el=$('cnt-'+t.id);if(el)el.textContent=items.filter(m=>m.taalId===t.id&&!m.deleted).length+' فایل'})}).catch(()=>{})}
+function openTaal(id){state.activeTaal=id;renderTaalDetail();$('taalDetail').classList.remove('hidden');$('taalDetail').scrollIntoView({behavior:'smooth',block:'nearest'})}
+function closeTaal(){state.activeTaal=null;$('taalDetail').classList.add('hidden')}
+function renderTaalDetail(){const t=state.taals.find(x=>x.id===state.activeTaal);if(!t)return;$('activeTaalTitle').textContent=t.name;dbAll().then(items=>{const list=items.filter(m=>m.taalId===t.id&&!m.deleted);$('activeTaalCount').textContent=list.length+' فایل ثبت شده';$('mediaList').innerHTML=list.map(m=>`<div class="filecard"><strong>${esc(m.name)}</strong><div class="muted">${m.type==='video'?'ویدیو':'صوت'} • ${formatSize(m.size)}</div>${m.type==='video'?`<video controls playsinline preload="metadata" src="${URL.createObjectURL(m.blob)}"></video>`:`<audio controls preload="metadata" src="${URL.createObjectURL(m.blob)}"></audio>`}<div class="file-actions"><button class="btn small secondary" onclick="playRate('${m.id}',2)">۲ ضرب</button><button class="btn small secondary" onclick="renameMedia('${m.id}')">تغییر نام</button><button class="btn small danger" onclick="deleteMedia('${m.id}')">حذف</button></div></div>`).join('')||'<div class="empty">هنوز فایلی اضافه نشده است. دکمه «فایل» را بزنید.</div>'})}
+function formatSize(n){if(!n)return '';return n<1048576?Math.round(n/1024)+' KB':(n/1048576).toFixed(1)+' MB'}
+function addMediaToActive(){if(!state.activeTaal)return;$('mediaInput').value='';$('mediaInput').click()}
+$('mediaInput').addEventListener('change',async e=>{const files=[...e.target.files||[]];if(!files.length)return;for(const f of files){const type=f.type.startsWith('video/')||/\.(mp4|mov|m4v|webm|3gp)$/i.test(f.name)?'video':'audio';await dbPut({id:uid(),taalId:state.activeTaal,name:f.name,type,size:f.size,mime:f.type,blob:f,deleted:false,created:Date.now()})}renderAll();renderTaalDetail()});
+async function playRate(id,rate){const items=await dbAll();const m=items.find(x=>x.id===id);if(!m)return;const media=[...document.querySelectorAll('audio,video')].find(el=>el.src===el.currentSrc||el.currentSrc.includes(m.name));if(media){media.playbackRate=rate;media.play().catch(()=>{});return}alert('فایل را از پلیر پخش کنید؛ سپس دکمه ۲ ضرب را بزنید.')}
+async function renameMedia(id){const items=await dbAll(),m=items.find(x=>x.id===id);if(!m)return;const n=prompt('نام تازه فایل:',m.name);if(n&&n.trim()){m.name=n.trim();await dbPut(m);renderTaalDetail();renderTaals()}}
+async function deleteMedia(id){const items=await dbAll(),m=items.find(x=>x.id===id);if(!m)return;m.deleted=true;m.deletedAt=Date.now();await dbPut(m);renderTaalDetail();renderTaals()}
+function renderRaags(){const q=$('globalSearch').value.trim().toLowerCase();$('raagTabs').innerHTML=state.raags.filter(r=>!q||r.name.toLowerCase().includes(q)).map(r=>`<button class="pill ${r.id===state.activeRaag?'active':''}" onclick="selectRaag('${r.id}')">${esc(r.name)}</button>`).join('');}
+function selectRaag(id){state.activeRaag=id;save();renderRaags();renderNotes()}
+function renderNotes(){const r=state.raags.find(x=>x.id===state.activeRaag);$('raagHint').textContent=r?'شعرهای '+r.name:'راگ انتخاب نشده';const taals=['همه تال‌ها',...DEFAULT_TAALS,...state.taals.map(t=>t.name)].filter((v,i,a)=>a.indexOf(v)===i);$('noteTaalTabs').innerHTML=taals.map(t=>`<button class="pill ${t===state.activeNoteTaal?'active':''}" onclick="selectNoteTaal('${esc(t).replace(/'/g,"\\'")}')">${esc(t)}</button>`).join('');const q=$('globalSearch').value.trim().toLowerCase();const ns=state.notes.filter(n=>n.raagId===state.activeRaag&&!n.deleted&&(state.activeNoteTaal==='همه تال‌ها'||n.taal===state.activeNoteTaal)&&(!q||(n.title+' '+n.aram+' '+n.medium+' '+n.mast).toLowerCase().includes(q)));$('noteGrid').innerHTML=ns.map(n=>`<button class="notebtn" onclick="openNote('${n.id}')"><b>${esc(n.title||'بدون عنوان')}</b><small>${esc((n.aram||n.medium||n.mast||'متن شعر ثبت نشده').replace(/\n/g,' '))}</small><div class="tag">${esc(n.taal||'بدون تال')} · ${esc(n.dateDari||'')}</div></button>`).join('')||'<div class="empty">شعری در این بخش نیست. برای ثبت شعر «＋ شعر» را بزنید.</div>'}
+function selectNoteTaal(t){state.activeNoteTaal=t;renderNotes()}
+function openModal(title,body,saveLabel,callback){$('modalRoot').innerHTML=`<div class="modalback" onclick="if(event.target===this)closeModal()"><div class="modal"><h2>${title}</h2>${body}<div class="modalfoot"><button class="btn" id="modalSave">${saveLabel||'ذخیره'}</button><button class="btn secondary" onclick="closeModal()">انصراف</button></div></div></div>`;$('modalSave').onclick=callback}
+function closeModal(){$('modalRoot').innerHTML=''}
+function openAddTaal(){openModal('افزودن تال','<label>نام تال</label><input id="newTaal" placeholder="مثلاً تینتال یا دادره">','افزودن',()=>{const name=$('newTaal').value.trim();if(!name)return alert('نام تال را بنویسید');const t={id:uid(),name,mediaCount:0};state.taals.push(t);save();closeModal();renderAll();openTaal(t.id)})}
+function openAddRaag(){openModal('افزودن راگ','<label>نام راگ</label><input id="newRaag" placeholder="نام راگ">','افزودن',()=>{const name=$('newRaag').value.trim();if(!name)return;const r={id:uid(),name};state.raags.push(r);state.activeRaag=r.id;save();closeModal();renderAll()})}
+function todayDates(){const d=new Date();let dari='';try{dari=new Intl.DateTimeFormat('fa-AF-u-ca-persian',{year:'numeric',month:'long',day:'numeric'}).format(d)}catch(e){dari=new Intl.DateTimeFormat('fa-IR-u-ca-persian',{year:'numeric',month:'long',day:'numeric'}).format(d)}return {dari,greg:new Intl.DateTimeFormat('en-GB',{year:'numeric',month:'long',day:'numeric'}).format(d)}}
+function openAddNote(id){const n=state.notes.find(x=>x.id===id)||{title:'',taal:'همه تال‌ها',aram:'',medium:'',mast:'',raagId:state.activeRaag,dateDari:todayDates().dari,dateGreg:todayDates().greg};const isEdit=!!id;const taalOptions=[...new Set([...DEFAULT_TAALS,...state.taals.map(t=>t.name),'همه تال‌ها'])];const body=`<label>نام شعر / آهنگ</label><input id="noteTitle" value="${esc(n.title)}" placeholder="نام آهنگ"><label>تال مربوط</label><select id="noteTaal">${taalOptions.map(t=>`<option ${t===n.taal?'selected':''}>${esc(t)}</option>`).join('')}</select><div class="linebox"><h3>آرام</h3><textarea id="noteAram" placeholder="متن آهنگ آرام">${esc(n.aram)}</textarea></div><div class="linebox"><h3>متوسط</h3><textarea id="noteMedium" placeholder="متن آهنگ متوسط">${esc(n.medium)}</textarea></div><div class="linebox"><h3>مست</h3><textarea id="noteMast" placeholder="متن آهنگ مست">${esc(n.mast)}</textarea></div><label>تاریخ (دری)</label><input id="noteDari" value="${esc(n.dateDari)}"><label>تاریخ عیسوی</label><input id="noteGreg" value="${esc(n.dateGreg)}">`;
+openModal(isEdit?'ویرایش شعر':'ثبت شعر تازه',body,'ذخیره',()=>{const title=$('noteTitle').value.trim();if(!title)return alert('نام شعر را بنویسید');const obj={...n,id:n.id||uid(),title,taal:$('noteTaal').value,aram:$('noteAram').value,medium:$('noteMedium').value,mast:$('noteMast').value,raagId:state.activeRaag,dateDari:$('noteDari').value,dateGreg:$('noteGreg').value,updated:Date.now()};if(isEdit)state.notes=state.notes.map(x=>x.id===id?obj:x);else state.notes.push(obj);save();closeModal();renderNotes()})}
+function openNote(id){const n=state.notes.find(x=>x.id===id);if(!n)return;openModal(esc(n.title),`<div class="muted">${esc(n.taal||'بدون تال')} • ${esc(n.dateDari||'')} • ${esc(n.dateGreg||'')}</div>${[['آرام',n.aram],['متوسط',n.medium],['مست',n.mast]].map(([k,v])=>`<div class="linebox"><h3>${k}</h3><div style="white-space:pre-wrap;line-height:1.8">${esc(v||'—')}</div></div>`).join('')}<div class="file-actions"><button class="btn small" onclick="closeModal();openAddNote('${n.id}')">ویرایش</button><button class="btn small danger" onclick="moveNoteToTrash('${n.id}')">حذف به زباله</button></div>`,'بستن',()=>closeModal())}
+function moveNoteToTrash(id){const n=state.notes.find(x=>x.id===id);if(n){n.deleted=true;n.deletedAt=Date.now();save()}closeModal();renderNotes()}
+function renderTrash(){const deleted=state.notes.filter(n=>n.deleted);dbAll().then(items=>{const media=items.filter(m=>m.deleted);const notesHtml=deleted.map(n=>`<div class="trashitem"><span>${esc(n.title)}</span><span><button class="btn small" onclick="restoreNote('${n.id}')">بازگردانی</button> <button class="btn small danger" onclick="deleteNoteForever('${n.id}')">پاک‌کردن</button></span></div>`).join('');const mediaHtml=media.map(m=>`<div class="trashitem"><span>${esc(m.name)}</span><span><button class="btn small" onclick="restoreMedia('${m.id}')">بازگردانی</button> <button class="btn small danger" onclick="deleteMediaForever('${m.id}')">پاک‌کردن</button></span></div>`).join('');$('trashList').innerHTML=(notesHtml+mediaHtml)||'<div class="empty">سطل زباله خالی است.</div>'})}
+function restoreNote(id){const n=state.notes.find(x=>x.id===id);if(n)n.deleted=false;save();renderTrash()}
+function deleteNoteForever(id){if(confirm('این شعر برای همیشه پاک شود؟')){state.notes=state.notes.filter(n=>n.id!==id);save();renderTrash()}}
+async function restoreMedia(id){const items=await dbAll(),m=items.find(x=>x.id===id);if(m){m.deleted=false;await dbPut(m)}renderTrash();renderTaals()}
+async function deleteMediaForever(id){if(confirm('این فایل برای همیشه پاک شود؟')){await dbDelete(id);renderTrash();renderTaals()}}
+async function emptyTrash(){if(!confirm('تمام موارد سطل زباله برای همیشه پاک شود؟'))return;state.notes=state.notes.filter(n=>!n.deleted);save();const items=await dbAll();for(const m of items)if(m.deleted)await dbDelete(m.id);renderTrash()}
+function renderDates(){const d=todayDates();$('dates').textContent='دری: '+d.dari+' | عیسوی: '+d.greg}
+function showHelp(){openModal('راهنمای سریع','<p>۱. از خانه روی دکمه تال بزنید، سپس «＋ فایل» را انتخاب کنید. فایل‌های MP3، MP4 و فرمت‌های رایج صوتی/تصویری پشتیبانی می‌شوند.</p><p>۲. در کتاب شعر راگ را انتخاب و «＋ شعر» را بزنید. متن آرام، متوسط و مست جداگانه ذخیره می‌شود.</p><p>۳. روی کارت شعر بزنید تا متن را ببینید و ویرایش یا حذف کنید. موارد حذف‌شده به سطل زباله می‌روند.</p><p>۴. داده‌ها روی همین دستگاه و مرورگر ذخیره می‌شوند؛ گیت‌هاب محل میزبانی برنامه است، نه محل ذخیره فایل‌های شخصی شما.</p><p>۵. برای نصب در آیفون: سایت را در Safari باز کنید، دکمه Share را بزنید و Add to Home Screen را انتخاب کنید.</p>','فهمیدم',closeModal)}
+function exportData(){const blob=new Blob([JSON.stringify({notes:state.notes,raags:state.raags,taals:state.taals,trash:state.trash},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='shaar-taal-backup.json';a.click();URL.revokeObjectURL(a.href)}
+function importData(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(x.notes)state.notes=x.notes;if(x.raags)state.raags=x.raags;if(x.taals)state.taals=x.taals;save();renderAll();alert('پشتیبان بازیابی شد.')}catch(err){alert('فایل پشتیبان درست نیست.')}};r.readAsText(f);e.target.value=''}
+function resetApp(){if(confirm('تمام شعرها، راگ‌ها و تال‌های ثبت‌شده حذف شوند؟ فایل‌های صوتی نیز باید جداگانه از مرورگر پاک شوند.')){localStorage.removeItem('sg_state');location.reload()}}
+(async function start(){loadState();try{await initDB()}catch(e){alert('ذخیره فایل در این مرورگر فعال نشد. لطفاً Safari را به‌روز کنید.')}renderAll();renderDates()})();
+</script>
+</body></html>
